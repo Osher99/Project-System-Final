@@ -1,0 +1,28 @@
+<hr>
+<br/>
+<div class="container">
+  <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+    <div  style="text-align: center;" class="form-group required" >  
+        <label style=" color: white!important;">Project Name:</label>
+      <input class="form-control" formControlName="ProjectName" style="text-align: center;" maxlength="25">
+      <label class="text-danger" *ngIf="service.formModel.get('ProjectName').touched &&
+      service.formModel.get('ProjectName').errors?.required">Project Name is required!</label>
+    </div>
+    <div  style="text-align: center" class="form-group required">  
+        <label style=" color: white;">Description:</label>
+        <textarea class="form-control" formControlName="Description" rows="3" style="text-align: center; border: 1px solid;"></textarea>
+        <label class="text-danger" *ngIf="service.formModel.get('Description').touched &&
+        service.formModel.get('Description').errors?.required">Description is required!</label>
+      </div>
+      <div  style="text-align: center" class="form-group">  
+        <label style=" color: white;">Image URL:</label>          
+          <p style="font-style: italic; font-size: 10px; color: white">Optional</p>
+        <input class="form-control" formControlName="ImageURL" style="text-align: center;">
+      </div>
+          <div class="form-row">
+            <div class="form-group col-md-8 offset-md-2"> 
+              <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">Add new Project</button>
+            </div>
+          </div>
+  </form>
+</div>

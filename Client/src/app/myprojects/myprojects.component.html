@@ -1,0 +1,17 @@
+<hr> 
+<div class="flex-container">  
+  <div class="card" style="width: 25rem; text-align: center" *ngFor="let project of projectList">
+    <img class="card-img-top" [src]="project.imageURL" alt="No Image">
+    <div class="card-body">
+      <h3 class="card-title" style="font-weight: bold">      {{ project.projectName }}
+      </h3>
+      <p class="card-text">{{ project.description }}</p>
+      <strong>Is done?: </strong>
+      <p style="color: rgb(23, 223, 43)" *ngIf="project.isDone">Yes</p>
+      <p style="color: red" *ngIf="!project.isDone">Not Yet</p>   
+      <button class="btn btn-primary" (click)="onChangeDone(project.id)"><span *ngIf="!project.isDone">Done</span>
+        <span *ngIf="project.isDone">Not Done</span></button>
+      <hr>
+      <button class="btn btn-danger" (click)="onRemove(project.id)">Delete Project</button>
+    </div>
+  </div></div>

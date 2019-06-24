@@ -1,0 +1,14 @@
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\bin\Debug\netcoreapp2.2\ServerSideJWT.deps.json
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\bin\Debug\netcoreapp2.2\ServerSideJWT.runtimeconfig.json
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\bin\Debug\netcoreapp2.2\ServerSideJWT.runtimeconfig.dev.json
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\bin\Debug\netcoreapp2.2\ServerSideJWT.dll
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\bin\Debug\netcoreapp2.2\ServerSideJWT.pdb
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.csprojAssemblyReference.cache
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.csproj.CoreCompileInputs.cache
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.RazorAssemblyInfo.cache
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.RazorAssemblyInfo.cs
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.AssemblyInfoInputs.cache
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.AssemblyInfo.cs
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.RazorTargetAssemblyInfo.cache
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.dll
+C:\Users\osher\source\repos\ServerSideJWT\ServerSideJWT\obj\Debug\netcoreapp2.2\ServerSideJWT.pdb
