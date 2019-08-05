@@ -1,6 +1,6 @@
 <hr> 
 <div class="flex-container">  
-  <div class="card" style="width: 25rem; text-align: center" *ngFor="let project of projectList">
+  <div class="card" style="width: 25rem; margin-left: 10px; justify-content: center;" *ngFor="let project of projectList">
     <img class="card-img-top" [src]="project.imageURL" alt="No Image">
     <div class="card-body">
       <h3 class="card-title" style="font-weight: bold">      {{ project.projectName }}

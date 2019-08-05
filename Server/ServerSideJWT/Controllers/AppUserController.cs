@@ -27,6 +27,7 @@ namespace ServerSideJWT.Controllers
         #region Fields
         private const string EMAIL_VERIFIED_URI = "http://localhost:4200/user/login";
         private readonly IUserService _userService;
+        private readonly bool CODE_VALID = false;
         #endregion
 
         #region Ctor
@@ -52,20 +53,27 @@ namespace ServerSideJWT.Controllers
 
                 if (output.Result.Succeeded)
                 {
-                    string confirmationToken = _userService.GetConfirmationToken(output.User);
 
-                    string confirmationTokenLink = Url.Action("ConfirmEmail", "AppUser", new
+                    // *LICENCE CODE EXPIRED* //
+
+                    if (CODE_VALID)
                     {
-                        userId = output.User.Id,
-                        code = confirmationToken
-                    }, protocol: HttpContext.Request.Scheme);
+                        string confirmationToken = _userService.GetConfirmationToken(output.User);
 
-                    bool finalRes = _userService.SendEmail(output.User, confirmationTokenLink);
+                        string confirmationTokenLink = Url.Action("ConfirmEmail", "AppUser", new
+                        {
+                            userId = output.User.Id,
+                            code = confirmationToken
+                        }, protocol: HttpContext.Request.Scheme);
 
-                    if (finalRes)
-                        return Ok(output.Result);
+                        bool finalRes = _userService.SendEmail(output.User, confirmationTokenLink);
 
-                    return BadRequest(new { message = "Register failed! Email verfication has been destoryed" });
+                    }
+
+                    ////if (finalRes)
+                    return Ok(output.Result);
+
+                    //return BadRequest(new { message = "Register failed! Email verfication has been destoryed" });
                 }
                 else
                     return BadRequest(new { message = "Register failed! Please try again later" });
