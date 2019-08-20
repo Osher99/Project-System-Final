@@ -47,6 +47,7 @@ namespace ServerSideJWT
                 });
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IRepository, Repository>();
             services.AddDbContext<AuthContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));

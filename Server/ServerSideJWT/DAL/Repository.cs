@@ -1,4 +1,5 @@
-﻿using ServerSideJWT.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ServerSideJWT.Data;
 using ServerSideJWT.Infra;
 using ServerSideJWT.Models;
 using System;
@@ -61,5 +62,51 @@ namespace ServerSideJWT.DAL
                 return false;
         }
 
+        public async Task<IEnumerable<PaymentDetail>> GetPaymentDetails(string userId)
+        {
+            return await _context.PaymentDetails.Where(p=> p.UserId == userId).ToListAsync();
+        }
+
+        public async Task<bool> AddCard(PaymentDetail paymentDetail)
+        {
+            try
+            {
+                _context.PaymentDetails.Add(paymentDetail);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+        public async Task<PaymentDetail> GetPaymentDetail(int id)
+        {
+            var paymentDetail = await _context.PaymentDetails.FindAsync(id);
+
+            return paymentDetail;
+        }
+
+        public async Task<bool> EditCardDetail(int id, PaymentDetail paymentDetail)
+        {
+
+            if (id != paymentDetail.PMId)
+                return false;
+
+            _context.Entry(paymentDetail).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

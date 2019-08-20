@@ -13,6 +13,12 @@ namespace ServerSideJWT.Infra
         Project FindProjectById(int projectId);
         Task<IEnumerable<Project>> GetAllProjects(string userId);
         Task<bool> ChangeDoneAsync(int projectId);
+        Task<IEnumerable<PaymentDetail>> GetPaymentDetails(string userId);
+        Task<bool> AddCard(PaymentDetail paymentDetail);
+        Task<PaymentDetail> GetPaymentDetail(int id);
+        Task<bool> EditCardDetail(int id, PaymentDetail paymentDetail);
+
+
 
     }
 }
