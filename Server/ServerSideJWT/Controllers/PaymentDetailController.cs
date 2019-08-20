@@ -83,21 +83,13 @@ namespace ServerSideJWT.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<PaymentDetail>> DeletePaymentDetail(int id)
         {
-            var paymentDetail = await _context.PaymentDetails.FindAsync(id);
-            if (paymentDetail == null)
-            {
+            var paymentDeleted = await _paymentService.DeleteCard(id);
+
+            if (paymentDeleted == null)
                 return NotFound();
-            }
 
-            _context.PaymentDetails.Remove(paymentDetail);
-            await _context.SaveChangesAsync();
-
-            return paymentDetail;
+            return paymentDeleted;
         }
 
-        private bool PaymentDetailExists(int id)
-        {
-            return _context.PaymentDetails.Any(e => e.PMId == id);
-        }
     }
 }

@@ -21,6 +21,11 @@ namespace ServerSideJWT.Services
             return await _repositroy.AddCard(paymentDetail);
         }
 
+        public Task<PaymentDetail> DeleteCard(int id)
+        {
+            return _repositroy.DeletePaymentDetail(id);
+        }
+
         public async Task<bool> EditCard(int id, PaymentDetail paymentDetail)
         {
             return await _repositroy.EditCardDetail(id, paymentDetail);

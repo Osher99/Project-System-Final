@@ -103,10 +103,32 @@ namespace ServerSideJWT.DAL
             }
             catch (Exception)
             {
-                return false;
+                if (!PaymentDetailExists(id))
+                {
+                    return false;
+                }
+                throw;
+            }
+            return true;
+        }
+
+        public  bool PaymentDetailExists(int id)
+        {
+            return _context.PaymentDetails.Any(e => e.PMId == id);
+        }
+
+        public async Task<PaymentDetail> DeletePaymentDetail(int id)
+        {
+            var paymentDetail = await _context.PaymentDetails.FindAsync(id);
+            if (paymentDetail == null)
+            {
+                return null;
             }
 
-            return true;
+            _context.PaymentDetails.Remove(paymentDetail);
+            await _context.SaveChangesAsync();
+
+            return paymentDetail;
         }
     }
 }

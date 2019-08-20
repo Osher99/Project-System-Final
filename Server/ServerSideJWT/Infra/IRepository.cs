@@ -17,8 +17,7 @@ namespace ServerSideJWT.Infra
         Task<bool> AddCard(PaymentDetail paymentDetail);
         Task<PaymentDetail> GetPaymentDetail(int id);
         Task<bool> EditCardDetail(int id, PaymentDetail paymentDetail);
-
-
-
+        Task<PaymentDetail> DeletePaymentDetail(int id);
+        bool PaymentDetailExists(int id);
     }
 }
