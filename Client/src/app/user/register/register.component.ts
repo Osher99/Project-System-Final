@@ -18,24 +18,24 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.service.register().subscribe(
       (result: any) => {
-        if (result.succeeded) {
+        if (result.Succeeded) {
           this.service.formModel.reset();
           this.toastr.success('New user created!', 'Register Process Successful');
         } else {
           result.errors.forEach(element => {
-            switch (element.code) {
+            switch (element.Code) {
               case 'DuplicateUserName':
                   this.toastr.error('User Name is already taken!', 'Register Process failed');
                   break;
                 default:
-                    this.toastr.error(element.description, 'Register Process failed');
+                    this.toastr.error(element.Description, 'Register Process failed');
                     break;
             }
           });
         }
       },
       err => {
-        this.toastr.error(err.description, 'Register Process failed, try to change email');
+        this.toastr.error(err.Description, 'Register Process failed, try to change email');
       }
     );
   }

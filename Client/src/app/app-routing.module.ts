@@ -13,6 +13,7 @@ import { AddprojectComponent } from './addproject/addproject.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 import { PwrecoveryComponent } from './pwrecovery/pwrecovery.component';
 import { PrivatepanelComponent } from './privatepanel/privatepanel.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/login', pathMatch: 'full' },
@@ -24,6 +25,7 @@ children: [
 ]
 },
 { path: 'home', component: HomeComponent, canActivate: [AuthGuard], children: [
+  { path: 'paymentpage', component: PaymentDetailsComponent },
   { path: 'privatepanel', component: PrivatepanelComponent },
   { path: 'newproject', component: AddprojectComponent },
   { path: 'myprojects', component: MyprojectsComponent },

@@ -10,8 +10,8 @@ using ServerSideJWT.Data;
 namespace ServerSideJWT.Migrations
 {
     [DbContext(typeof(AuthContext))]
-    [Migration("20190623131056_Init")]
-    partial class Init
+    [Migration("20190819111943_Initial-Migration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -209,6 +209,35 @@ namespace ServerSideJWT.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Duties");
+                });
+
+            modelBuilder.Entity("ServerSideJWT.Models.PaymentDetail", b =>
+                {
+                    b.Property<int>("PMId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CVV")
+                        .IsRequired()
+                        .HasColumnType("varchar(3)");
+
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(16)");
+
+                    b.Property<string>("CardOwnerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ExpirationDate")
+                        .IsRequired()
+                        .HasColumnType("varchar(5)");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("PMId");
+
+                    b.ToTable("PaymentDetails");
                 });
 
             modelBuilder.Entity("ServerSideJWT.Models.Project", b =>

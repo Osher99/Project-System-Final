@@ -13,9 +13,12 @@
   <li class="nav-item"> 
       <a class="nav-link" routerLink="/home/privatepanel">Private Panel</a>
     </li>
+    <li class="nav-item"> 
+        <a class="nav-link" routerLink="/home/paymentpage">Payment List</a>
+      </li>
   </ul>
-  <a class="navbar-brand text-white"  *ngIf="!verified">Email Not Confirmed</a>
-  <a class="navbar-brand text-white"  *ngIf="userDetails">Welcome {{ userDetails.userName }}  </a>
+  <!-- <a class="navbar-brand text-white"  *ngIf="!verified">Email Not Confirmed</a> -->
+  <a class="navbar-brand text-white"  *ngIf="userDetails">Welcome {{ userDetails.UserName }}  </a>
   <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Log out</button>
 </nav>
 <router-outlet></router-outlet>

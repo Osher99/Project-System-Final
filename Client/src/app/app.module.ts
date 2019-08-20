@@ -22,6 +22,10 @@ import { MyprojectsComponent } from './myprojects/myprojects.component';
 import { CommonModule } from '@angular/common';
 import { PwrecoveryComponent } from './pwrecovery/pwrecovery.component';
 import { PrivatepanelComponent } from './privatepanel/privatepanel.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { PaymentDetailComponent } from './payment-details/payment-detail/payment-detail.component';
+import { PaymentDetailListComponent } from './payment-details/payment-detail-list/payment-detail-list.component';
+import { PaymentDetailService } from './shared/payment-detail.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,10 @@ import { PrivatepanelComponent } from './privatepanel/privatepanel.component';
     AddprojectComponent,
     MyprojectsComponent,
     PwrecoveryComponent,
-    PrivatepanelComponent
+    PrivatepanelComponent,
+    PaymentDetailsComponent,
+    PaymentDetailComponent,
+    PaymentDetailListComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,7 @@ import { PrivatepanelComponent } from './privatepanel/privatepanel.component';
     UserService,
     ProjectService,
     ToastrService,
+    PaymentDetailService,
     {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

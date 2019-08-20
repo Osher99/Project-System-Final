@@ -15,8 +15,8 @@ namespace ServerSideJWT.Data
         }
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
-
         public DbSet<Duty> Duties { get; set; }
+        public DbSet<PaymentDetail> PaymentDetails { get; set; }
 
     }
 }
