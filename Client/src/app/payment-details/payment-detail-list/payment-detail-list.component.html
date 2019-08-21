@@ -1,10 +1,16 @@
 <table class="table table-hover">
   <tr *ngFor="let pd of paymentService.cardList">
-    <td (click)="populateForm(pd)">{{pd.CardOwnerName}}</td>  
-    <td (click)="populateForm(pd)">{{pd.CardNumber}}</td>  
-    <td (click)="populateForm(pd)">{{pd.ExpirationDate}}</td>  
+    <td>{{pd.CardOwnerName}}</td> 
+    <td><span *ngFor="let char of pd.CardNumber.split(''); let i = index;">
+        <span>{{char}}</span>
+        <span *ngIf="i == 3 || i == 7 || i == 11"> - </span>
+      </span></td>  
+    <td>{{pd.ExpirationDate}}</td>   
   <td>
-    <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.PMId)"></i>
+      <i class="fa fa-pencil-alt fa-lg text-info" (click)="populateForm(pd)"></i>
+  </td>
+  <td>
+      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.PMId)"></i>
   </td>
   </tr>
 </table>
